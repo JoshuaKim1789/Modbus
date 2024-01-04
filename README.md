@@ -9,7 +9,7 @@ Last modified: Jan. 04, 2024
  - [61 (0x3D)] GHI
  - [71 ~ 80 (0x47 ~ 0x50)] POA
  - 
- - [90~100 (0x5A~0x64)] Structure Sensor
+ - [90 ~ 100 (0x5A ~ 0x64)] Structure Sensor
  - 
  - [200 (0xC8)] Wind Direction
  - [201 (0xC9)] Wind Speed

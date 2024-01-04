@@ -25,20 +25,19 @@ Last modified: Jan. 04, 2024
 	Brown	Vcc
 	Black	GND
 	Green	A+
-	Blue   	B-
+	Blue    B-
     </pre>
-
 - Modbus-RTU
     <pre>
-    Default speed 	4800bps
+    Default speed   4800bps
     Default address 0x01
     </pre>
 
 - Default Command
-> - Version Number
-	- Regiser Address: 0x0009
-	- Function: 0x03
-	- Example: V2.04
+   - Version Number
+   	 - Register Address: 0x0009
+	 - Function: 0x03
+	 - Example: V2.04
 	<pre>
 	  Send: 01 03 0009 0001 <CRC>
       Receive: 01 03 02 02 04 <CRC>

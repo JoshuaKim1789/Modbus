@@ -7,6 +7,7 @@
 - [Modbus Address Range](#modbus-address-range)
 - [Renke Default](#renke-default)
 - [Renke Wind Direction](#renke-wind-direction)
+- [Renke Wind Speed](#renke-wind-speed)
 
 ---
 
@@ -86,5 +87,17 @@
 
 - Register 0 : Wind direction 0 ~ 7
 - Register 1 : Wind direction 0 ~ 360°
+
+---
+
+# Renke Wind Speed
+
+- Register 0 : 10x Wind Speed value
+- Example: Wind Speed = 2.9 m/s (0x1D = 29)
+<pre>
+  Send: C9 03 0000 0001 <CRC>
+  Receive: C9 03 02 00 1D <CRC>
+</pre>
+
 
 ---

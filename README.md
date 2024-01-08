@@ -4,8 +4,8 @@
 
 ### Table of Contents
 
-- [Modbus Address Range](#ModbusAddressRange)
-- [Renke Default](#RenkeDefault)
+- [Modbus Address Range](#modbus-address-range)
+- [Renke Default](#renke-default)
 
 ---
 

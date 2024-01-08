@@ -9,7 +9,9 @@
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
 - [Renke Ambient Temperature](#renke-ambient-temperature)
+- [Renke Weather Station](#renke-weather-station)
 - [Renke 4-20mA RS485](#renke-4-20ma-rs485)
+
 ---
 
 # Modbus Address Range
@@ -115,6 +117,29 @@
   Send: CA 03 01 F9 00 01 [CRC] 
   Receive: CA 03 02 FF 9B [CRC]
 </pre> 
+
+---
+
+# Renke Weather Station
+
+### Wind Speed
+- Address: 01 (*)
+- Baud: 4800 (*)
+
+### Wind Direction
+- Address: 02 (*)
+- Baud: 4800 (*)
+
+### Base Station
+- Address: 01 --> 0xCA
+- Baud: 4800 --> 9600
+
+### Register Map
+- 500 (0x1F4) : 10x Wind Speed
+- 502 (0x1F6) : Wind Direction (0\~7)
+- 503 (0x1F7) : Wind Direction (0\~360°)
+- 504 (0x1F8) : 10x Humidity
+- 505 (0x1F9) : 10x Ambient Temperature
 
 ---
 

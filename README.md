@@ -8,6 +8,7 @@
 - [Renke Default](#renke-default)
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
+- [Renke Ambient Temperature](#renke-ambient-temperature)
 
 ---
 
@@ -99,5 +100,20 @@
   Receive: C9 03 02 00 1D <CRC>
 </pre>
 
+---
+
+# Renke Ambient Temperature
+
+- Register 505 (0x01F9) : 10x Ambient Temperature
+- Example: Ambient Temperature = 22.4°C (0xE0 = 224)
+<pre>
+  Send: CA 03 01 F9 00 01 <CRC> 
+  Receive: CA 03 02 00 E0 <CRC>
+</pre>
+- Example: Ambient Temperature = -10.1°C (0xFF9B = -101)
+<pre>
+  Send: CA 03 01 F9 00 01 <CRC> 
+  Receive: CA 03 02 FF 9B <CRC>
+</pre> 
 
 ---

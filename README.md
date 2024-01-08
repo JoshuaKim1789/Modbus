@@ -9,7 +9,7 @@
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
 - [Renke Ambient Temperature](#renke-ambient-temperature)
-
+- [Renke 4-20mA RS485](#renke-4-20ma-rs485)
 ---
 
 # Modbus Address Range
@@ -41,8 +41,8 @@
 
 ### Modbus-RTU
 <pre>
-    Default speed   4800bps
-    Default address 0x01
+  Default speed   4800bps
+  Default address 0x01
 </pre>
 
 ### Default Command
@@ -52,8 +52,8 @@
 - Function: 0x03
 - Example: V2.04
 <pre>
-    Send: 01 03 0009 0001 <CRC>
-    Receive: 01 03 02 02 04 <CRC>
+  Send: 01 03 0009 0001 [CRC]
+  Receive: 01 03 02 02 04 [CRC]
 </pre>
 
 #### Modbus Address
@@ -61,8 +61,8 @@
 - Function: 0x06 / 0x03
 - Example: Address = 0x00C8
 <pre>
-  Send: C8 06 07D0 00C8 <CRC>
-  Receive: C8 06 07 D0 00 C8 <CRC> // Echo
+  Send: C8 06 07D0 00C8 [CRC]
+  Receive: C8 06 07 D0 00 C8 [CRC] // Echo
 </pre>
 
 #### Baud Rate 
@@ -78,8 +78,8 @@
 
 - Example: Baud = 9600 bps
 <pre>
-  Send: C8 06 07D1 0002 <CRC>
-  Receive: C8 06 07 D1 00 02 <CRC> // Echo
+  Send: C8 06 07D1 0002 [CRC]
+  Receive: C8 06 07 D1 00 02 [CRC] // Echo
 </pre>
 
 ---
@@ -96,8 +96,8 @@
 - Register 0 : 10x Wind Speed value
 - Example: Wind Speed = 2.9 m/s (0x1D = 29)
 <pre>
-  Send: C9 03 0000 0001 <CRC>
-  Receive: C9 03 02 00 1D <CRC>
+  Send: C9 03 0000 0001 [CRC]
+  Receive: C9 03 02 00 1D [CRC]
 </pre>
 
 ---
@@ -107,13 +107,26 @@
 - Register 505 (0x01F9) : 10x Ambient Temperature
 - Example: Ambient Temperature = 22.4°C (0xE0 = 224)
 <pre>
-  Send: CA 03 01 F9 00 01 <CRC> 
-  Receive: CA 03 02 00 E0 <CRC>
+  Send: CA 03 01 F9 00 01 [CRC] 
+  Receive: CA 03 02 00 E0 [CRC]
 </pre>
 - Example: Ambient Temperature = -10.1°C (0xFF9B = -101)
 <pre>
-  Send: CA 03 01 F9 00 01 <CRC> 
-  Receive: CA 03 02 FF 9B <CRC>
+  Send: CA 03 01 F9 00 01 [CRC] 
+  Receive: CA 03 02 FF 9B [CRC]
 </pre> 
+
+---
+
+# Renke 4-20mA RS485
+
+- I/O : 4~20mA / 655~3276 (12bit)
+- Register 0 : CH1
+- Register 1 : CH2
+- Example: Read CH1 (0x78A = 1930)
+<pre>
+  Send: 5A 03 00 00 00 01 [CRC] 
+  Receive: 5A 03 02 07 8A [CRC] 
+</pre>
 
 ---

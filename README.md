@@ -5,6 +5,7 @@
 ### Table of Contents
 
 - [Modbus Address Range](#modbus-address-range)
+- [MBControl Default](#mbcontrol-default)
 - [Renke Default](#renke-default)
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
@@ -27,6 +28,20 @@
  - [201 (0xC9)] Wind Speed
  - [202 (0xCA)] Ambient Temperature 
 
+---
+
+# MBControl Default
+
+### Wire (LAPP 1032100)
+<pre>
+	White	Vcc
+	Brown	GND
+	Green	A+
+	Yellow  B-
+</pre>
+
+---
+
 # Renke Default
 ### 3 Way Cable:  
 >    https://youtu.be/ZsB1V8zTqgs?t=33
@@ -37,7 +52,7 @@
 <pre>
 	Brown	Vcc
 	Black	GND
-	Green	A+
+	Yellow	A+
 	Blue    B-
 </pre>
 

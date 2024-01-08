@@ -1,11 +1,11 @@
-#Modbus Setup
+# Modbus Setup
 
 <p style="text-align: right;">Last Updated: Jan. 08, 2024</p>
 
 ### Table of Contents
 
-- [ModbusAddressRange](#Modbus Address Range)
-- [RenkeDefault](#Renke Default)
+- [Modbus Address Range](#ModbusAddressRange)
+- [Renke Default](#RenkeDefault)
 
 ---
 
@@ -29,7 +29,7 @@
 ### DC Power: 12V (10 ~ 30V dc)
 
 ### Wire
-><pre>
+<pre>
 	Brown	Vcc
 	Black	GND
 	Green	A+
@@ -37,7 +37,7 @@
 </pre>
 
 ### Modbus-RTU
-><pre>
+<pre>
     Default speed   4800bps
     Default address 0x01
 </pre>
@@ -48,16 +48,16 @@
 - Register Address: 0x0009
 - Function: 0x03
 - Example: V2.04
-><pre>
+<pre>
     Send: 01 03 0009 0001 <CRC>
     Receive: 01 03 02 02 04 <CRC>
- </pre>
+</pre>
 
 #### Modbus Address
 - Register Address: 0x07D0
 - Function: 0x06 / 0x03
 - Example: Address = 0x00C8
-><pre>
+<pre>
   Send: C8 06 07D0 00C8 <CRC>
   Receive: C8 06 07 D0 00 C8 <CRC> // Echo
 </pre>
@@ -66,7 +66,7 @@
 - Register Address: 0x07D1
 - Function: 0x06 / 0x03
 - Content:
-><pre><code> baud rate: 
+<pre><code> baud rate: 
 	    0 – 2400bps
 	    1 – 4800bps
 	    2 – 9600 bps
@@ -74,7 +74,7 @@
 </code></pre>
 
 - Example: Baud = 9600 bps
-><pre>
+<pre>
   Send: C8 06 07D1 0002 <CRC>
   Receive: C8 06 07 D1 00 02 <CRC> // Echo
 </pre>

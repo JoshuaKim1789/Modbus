@@ -131,7 +131,7 @@
 - Baud: 4800 (*)
 
 ### Base Station
-- Address: 01 --> 0xCA
+- Address: 01 --> 202 (0xCA)
 - Baud: 4800 --> 9600
 
 ### Register Map

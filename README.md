@@ -6,6 +6,7 @@
 
 - [Modbus Address Range](#modbus-address-range)
 - [Renke Default](#renke-default)
+- [Renke Wind Direction](#renke-wind-direction)
 
 ---
 
@@ -78,5 +79,12 @@
   Send: C8 06 07D1 0002 <CRC>
   Receive: C8 06 07 D1 00 02 <CRC> // Echo
 </pre>
+
+---
+
+# Renke Wind Direction
+
+- Register 0 : Wind direction 0 ~ 7
+- Register 1 : Wind direction 0 ~ 360°
 
 ---

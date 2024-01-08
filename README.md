@@ -120,7 +120,7 @@
 
 # Renke 4-20mA RS485
 
-- I/O : 4~20mA / 655~3276 (12bit)
+- I/O : 4\~20mA / 655\~3276 (12bit)
 - Register 0 : CH1
 - Register 1 : CH2
 - Example: Read CH1 (0x78A = 1930)

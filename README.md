@@ -7,6 +7,7 @@
 - [Modbus Address Range](#modbus-address-range)
 - [MBControl Default](#mbcontrol-default)
 - [PUSR Default](#pusr-default)
+- [GA Default](#ga-default)
 - [Renke Default](#renke-default)
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
@@ -48,6 +49,14 @@
 3.81mm pitch 5P
 
 ![Local Image](images/usr_rtu_tb.png)
+
+---
+
+# GA Default
+
+3.50mm pitch 5P
+
+![Local Image](images/ga_tb.png)
 
 ---
 

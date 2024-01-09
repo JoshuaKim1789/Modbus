@@ -6,6 +6,7 @@
 
 - [Modbus Address Range](#modbus-address-range)
 - [MBControl Default](#mbcontrol-default)
+- [PUSR Default](#pusr-default)
 - [Renke Default](#renke-default)
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
@@ -39,6 +40,14 @@
 	Green	A+
 	Yellow  B-
 </pre>
+
+---
+
+# PUSR Default
+
+3.81mm pitch 5P
+
+![Local Image](images/usr_rtu_tb.png)
 
 ---
 

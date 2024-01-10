@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: Jan. 08, 2024</p>
+<p style="text-align: right;">Last Updated: Jan. 09, 2024</p>
 
 ### Table of Contents
 
@@ -98,6 +98,15 @@
 <pre>
   Send: C8 06 07D0 00C8 [CRC]
   Receive: C8 06 07 D0 00 C8 [CRC] // Echo
+</pre>
+
+#### Query Modbus Address (0xFF)
+- Register Address: 0x07D0
+- Function: 0x03
+- Example: Address = 0x003D
+<pre>
+  Send: FF 03 07D0 0001 [CRC]
+  Receive: 3D 03 02 00 3D [CRC]
 </pre>
 
 #### Baud Rate 

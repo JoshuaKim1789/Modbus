@@ -10,6 +10,7 @@
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
 - [Renke Default](#renke-default)
+- [Renke Pyranometer RS-TBQ-N01-AL](#renke-pyranometer-rs-tbq-n01-al)
 - [Renke Wind Direction](#renke-wind-direction)
 - [Renke Wind Speed](#renke-wind-speed)
 - [Renke Ambient Temperature](#renke-ambient-temperature)
@@ -22,8 +23,8 @@
 ### Total 1 ~ 247 (0x01 ~ 0xF7)
  - [01 ~ 30 (0x01 ~ 0x1E)] PV Inverter
  - [31 ~ 60 (0x1F ~ 0x3C] PV Temperature
- - [61 (0x3D)] GHI -- Renke Pyranometer RS-TBQ-N01-AL
- - [62 (0x3E)] GHI -- EKO Pyranometer MS-80SH 
+ - [61 (0x3D)] GHI : Renke Pyranometer RS-TBQ-N01-AL
+ - [62 (0x3E)] GHI : EKO Pyranometer MS-80SH 
  - [71 ~ 80 (0x47 ~ 0x50)] POA
  - 
  - [90 ~ 100 (0x5A ~ 0x64)] Structure Sensor
@@ -49,7 +50,7 @@
 # EKO Pyranometer MS-80SH
 Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 
-- Register 2, 3 : [F32] Adjusted solar radiation intensity (W/m²)
+- Address 2, 3 : [F32] Adjusted solar radiation intensity (W/m²)
 - Example: 3.6 W/m² (0x4064959C = 3.57163)
 <pre>
   Send: 3E 03 0002 0002 [CRC]
@@ -97,7 +98,7 @@ Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 ### Default Command
 
 #### Version Number
-- Register Address: 0x0009
+- Address: 0x0009
 - Function: 0x03
 - Example: V2.04
 <pre>
@@ -105,26 +106,26 @@ Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
   Receive: 01 03 02 02 04 [CRC]
 </pre>
 
-#### Modbus Address
-- Register Address: 0x07D0
+#### Modbus ID
+- Address: 0x07D0
 - Function: 0x06 / 0x03
-- Example: Address = 0x00C8
+- Example: ID = 0x00C8
 <pre>
   Send: C8 06 07D0 00C8 [CRC]
   Receive: C8 06 07 D0 00 C8 [CRC] // Echo
 </pre>
 
-#### Query Modbus Address (0xFF)
-- Register Address: 0x07D0
+#### Query Modbus ID (0xFF)
+- Address: 0x07D0
 - Function: 0x03
-- Example: Address = 0x003D
+- Example: ID = 0x003D
 <pre>
   Send: FF 03 07D0 0001 [CRC]
   Receive: 3D 03 02 00 3D [CRC]
 </pre>
 
 #### Baud Rate 
-- Register Address: 0x07D1
+- Address: 0x07D1
 - Function: 0x06 / 0x03
 - Content:
 <pre><code> baud rate: 
@@ -142,16 +143,27 @@ Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 
 ---
 
+# Renke Pyranometer RS-TBQ-N01-AL
+
+- Address 0 : [U16] Solar radiation intensity (W/m²)
+- Example: 16 W/m² (0x0010 = 16)
+<pre>
+  Send: 3D 03 0000 0001 [CRC]
+  Receive: 3D 03 02 00 10 [CRC]
+</pre>
+
+---
+
 # Renke Wind Direction
 
-- Register 0 : Wind direction 0 ~ 7
-- Register 1 : Wind direction 0 ~ 360°
+- Address 0 : [U16] Wind direction 0 ~ 7
+- Address 1 : [U16] Wind direction 0 ~ 360°
 
 ---
 
 # Renke Wind Speed
 
-- Register 0 : 10x Wind Speed value
+- Address 0 : [U16] 10x Wind Speed value
 - Example: Wind Speed = 2.9 m/s (0x1D = 29)
 <pre>
   Send: C9 03 0000 0001 [CRC]
@@ -162,7 +174,7 @@ Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 
 # Renke Ambient Temperature
 
-- Register 505 (0x01F9) : 10x Ambient Temperature
+- Address 505 (0x01F9) : [S16] 10x Ambient Temperature
 - Example: Ambient Temperature = 22.4°C (0xE0 = 224)
 <pre>
   Send: CA 03 01 F9 00 01 [CRC] 
@@ -179,31 +191,31 @@ Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 # Renke Weather Station
 
 ### Wind Speed
-- Address: 01 (*)
+- Modbus ID: 01 (*)
 - Baud: 4800 (*)
 
 ### Wind Direction
-- Address: 02 (*)
+- Modbus ID: 02 (*)
 - Baud: 4800 (*)
 
 ### Base Station
-- Address: 01 --> 202 (0xCA)
+- Modbus ID: 01 --> 202 (0xCA)
 - Baud: 4800 --> 9600
 
-### Register Map
-- 500 (0x1F4) : 10x Wind Speed
-- 502 (0x1F6) : Wind Direction (0\~7)
-- 503 (0x1F7) : Wind Direction (0\~360°)
-- 504 (0x1F8) : 10x Humidity
-- 505 (0x1F9) : 10x Ambient Temperature
+### Address Map
+- 500 (0x1F4) : [U16] 10x Wind Speed
+- 502 (0x1F6) : [U16] Wind Direction (0\~7)
+- 503 (0x1F7) : [U16] Wind Direction (0\~360°)
+- 504 (0x1F8) : [U16] 10x Humidity
+- 505 (0x1F9) : [S16] 10x Ambient Temperature
 
 ---
 
 # Renke 4-20mA RS485
 
 - I/O : 4\~20mA / 655\~3276 (12bit)
-- Register 0 : CH1
-- Register 1 : CH2
+- Address 00 : CH1
+- Address 01 : CH2
 - Example: Read CH1 (0x78A = 1930)
 <pre>
   Send: 5A 03 00 00 00 01 [CRC] 

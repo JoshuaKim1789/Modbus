@@ -7,8 +7,9 @@
 - [Modbus ID Range](#modbus-id-range)
 - [MBControl Default](#mbcontrol-default)
 - [EKO Pyranometer MS-80SH](#eko-pyranometer-ms-80sh)
-- [Solar Irradiance Sensor MBMet-500-AB](#solar-irradiance-sensor-mbmet-500-ab)
-- [PV Module Temperature Sensor MBMet-830](#pv-module-temperature-sensor-mbmet-830)
+- [MBControl Solar Irradiance Sensor MBMet-500-AB](#mbcontrol-solar-irradiance-sensor-mbmet-500-ab)
+- [MBControl PV Module Temperature Sensor MBMet-830](#mbcontrol-pv-module-temperature-sensor-mbmet-830)
+- [MBControl Wind Speed Sensor MBMet-100B-B](#mbcontrol-wind-speed-sensor-mbmet-100b-b)
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
 - [Renke Default](#renke-default)
@@ -80,7 +81,7 @@ GHI measurement. Set the Modbus ID and RS485 parameters in Hibi software supplie
 
 ---
 
-# Solar Irradiance Sensor MBMet-500-AB
+# MBControl Solar Irradiance Sensor MBMet-500-AB
 POA measurement.
 
 - Address 0 : [U16] Solar irradiation (W/m²)
@@ -92,7 +93,7 @@ POA measurement.
 
 ---
 
-# PV Module Temperature Sensor MBMet-830
+# MBControl PV Module Temperature Sensor MBMet-830
 PV Module Temperature measurement.
 
 - Address 0 : [S16] 10x Temperature (°C)
@@ -100,6 +101,18 @@ PV Module Temperature measurement.
 <pre>
   Send: 1F 03 0000 0001 [CRC]
   Receive: 1F 03 02 00 F9 [CRC]
+</pre>
+
+---
+
+# MBControl Wind Speed Sensor MBMet-100B-B
+Wind Speed measurement.
+
+- Address 0 : [U16] 10x Wind Speed (m/s)
+- Example: 3.2 m/s (0x0020 = 32)
+<pre>
+  Send: 01 03 0000 0001 [CRC]
+  Receive: 01 03 02 00 20 [CRC]
 </pre>
 
 ---
@@ -209,7 +222,7 @@ GHI measurement.
 
 # Renke Wind Speed
 
-- Address 0 : [U16] 10x Wind Speed value
+- Address 0 : [U16] 10x Wind Speed (m/s)
 - Example: Wind Speed = 2.9 m/s (0x1D = 29)
 <pre>
   Send: C9 03 0000 0001 [CRC]

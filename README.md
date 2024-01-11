@@ -7,6 +7,7 @@
 - [Modbus ID Range](#modbus-id-range)
 - [MBControl Default](#mbcontrol-default)
 - [EKO Pyranometer MS-80SH](#eko-pyranometer-ms-80sh)
+- [Solar Irradiance Sensor MBMet-500-AB](#solar-irradiance-sensor-mbmet-500-ab)
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
 - [Renke Default](#renke-default)
@@ -45,16 +46,47 @@
 	Yellow  B-
 </pre>
 
+### Modbus Parameters
+
+Use Function 16 (0x10) (Write Multiple Registers) to Write and Save parameters. Once rebooting it takes effect.
+
+<Pre>
+Address 100 (0x0064) [U16] Modbus ID 1 ~ 247
+Address 101 (0x0065) [U16] Baud rate: 0=4800, 1=9600, 2=19200
+Address 102 (0x0066) [U16] Parity: 0=None, 1=Odd, 2=Even
+Address 103 (0x0067) [U16] Stop bits: 1 (Fix)
+Address 104 (0x0068) [U16] Temperature Unit: 0=°C, 1=°K, 2=°F
+Address 105 (0x0069) [U16] Save Parameters: 1, Write Only
+</pre>
+
+- Example: ID=71(0x47), Baud=9600, No Parity, 1 Stop bit, °C
+<pre>
+  Send: 06 10 0064 0006 0C 0047 0001 0000 0001 0000 0001 [CRC]
+  Receive: 06 10 00 64 00 06 [CRC]
+</pre>
+
 ---
 
 # EKO Pyranometer MS-80SH
-Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
+GHI measurement. Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 
 - Address 2, 3 : [F32] Adjusted solar radiation intensity (W/m²)
 - Example: 3.6 W/m² (0x4064959C = 3.57163)
 <pre>
   Send: 3E 03 0002 0002 [CRC]
   Receive: 3E 03 04 40 64 95 9C [CRC]
+</pre>
+
+---
+
+# Solar Irradiance Sensor MBMet-500-AB
+POA measurement.
+
+- Address 0 : [U16] Solar irradiation (W/m²)
+- Example: 7 W/m² (0x0007 = 7)
+<pre>
+  Send: 47 03 0000 0001 [CRC]
+  Receive: 47 03 02 00 07 [CRC]
 </pre>
 
 ---
@@ -144,6 +176,7 @@ Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 ---
 
 # Renke Pyranometer RS-TBQ-N01-AL
+GHI measurement.
 
 - Address 0 : [U16] Solar radiation intensity (W/m²)
 - Example: 16 W/m² (0x0010 = 16)

@@ -44,6 +44,8 @@
 	Yellow  B-
 </pre>
 
+---
+
 # EKO Pyranometer MS-80SH
 Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
 

@@ -1,11 +1,12 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: Jan. 09, 2024</p>
+<p style="text-align: right;">Last Updated: Jan. 11, 2024</p>
 
 ### Table of Contents
 
 - [Modbus Address Range](#modbus-address-range)
 - [MBControl Default](#mbcontrol-default)
+- [EKO Pyranomete MS-80SH](#ms-80sh)
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
 - [Renke Default](#renke-default)
@@ -21,7 +22,8 @@
 ### Total 1 ~ 247 (0x01 ~ 0xF7)
  - [01 ~ 30 (0x01 ~ 0x1E)] PV Inverter
  - [31 ~ 60 (0x1F ~ 0x3C] PV Temperature
- - [61 (0x3D)] GHI
+ - [61 (0x3D)] GHI -- Renke Pyranometer RS-TBQ-N01-AL
+ - [62 (0x3E)] GHI -- EKO Pyranometer MS-80SH 
  - [71 ~ 80 (0x47 ~ 0x50)] POA
  - 
  - [90 ~ 100 (0x5A ~ 0x64)] Structure Sensor
@@ -40,6 +42,16 @@
 	Brown	GND
 	Green	A+
 	Yellow  B-
+</pre>
+
+# EKO Pyranomete MS-80SH
+Set the Modbus ID and RS485 parameters in Hibi software supplied by EKO.
+
+- Register 2,3 : [F32] Adjusted solar radiation intensity (W/m²)
+- Example: 3.6 W/m² (0x4064959C = 3.57163)
+<pre>
+  Send: 3E 03 0002 0002 [CRC]
+  Receive: 3E 03 04 40 64 95 9C [CRC]
 </pre>
 
 ---

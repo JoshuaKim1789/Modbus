@@ -91,6 +91,18 @@ POA measurement.
 
 ---
 
+# PV Module Temperature Sensor MBMet-830
+PV Module Temperature measurement.
+
+- Address 0 : [S16] 10x Temperature (°C)
+- Example: 24.9°C (0x00F9 = 249)
+<pre>
+  Send: 1F 03 0000 0001 [CRC]
+  Receive: 1F 03 02 00 F9 [CRC]
+</pre>
+
+---
+
 # PUSR Default
 
 3.81mm pitch 5P
@@ -240,7 +252,7 @@ GHI measurement.
 - 502 (0x1F6) : [U16] Wind Direction (0\~7)
 - 503 (0x1F7) : [U16] Wind Direction (0\~360°)
 - 504 (0x1F8) : [U16] 10x Humidity
-- 505 (0x1F9) : [S16] 10x Ambient Temperature
+- 505 (0x1F9) : [S16] 10x Ambient Temperature (°C)
 
 ---
 

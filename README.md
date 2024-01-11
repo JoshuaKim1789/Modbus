@@ -8,6 +8,7 @@
 - [MBControl Default](#mbcontrol-default)
 - [EKO Pyranometer MS-80SH](#eko-pyranometer-ms-80sh)
 - [Solar Irradiance Sensor MBMet-500-AB](#solar-irradiance-sensor-mbmet-500-ab)
+- [PV Module Temperature Sensor MBMet-830](#pv-module-temperature-sensor-mbmet-830)
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
 - [Renke Default](#renke-default)

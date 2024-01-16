@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: Jan. 11, 2024</p>
+<p style="text-align: right;">Last Updated: Jan. 16, 2024</p>
 
 ### Table of Contents
 
@@ -19,7 +19,7 @@
 - [Renke Ambient Temperature](#renke-ambient-temperature)
 - [Renke Weather Station](#renke-weather-station)
 - [Renke 4-20mA RS485](#renke-4-20ma-rs485)
-
+- [RS485 Termination](#rs485-termination)
 ---
 
 # Modbus ID Range
@@ -280,5 +280,19 @@ GHI measurement.
   Send: 5A 03 00 00 00 01 [CRC] 
   Receive: 5A 03 02 07 8A [CRC] 
 </pre>
+
+---
+
+# RS485 Termination
+
+TI Application
+
+![TI Application](images/ti_rt.png)
+
+<br>
+
+PUSR Function
+
+![PUSR](images/pusr_rt.png)
 
 ---

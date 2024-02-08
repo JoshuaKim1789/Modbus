@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: Jan. 16, 2024</p>
+<p style="text-align: right;">Last Updated: Feb. 08, 2024</p>
 
 ### Table of Contents
 
@@ -273,9 +273,9 @@ GHI measurement.
 # Renke 4-20mA RS485
 
 - I/O : 4\~20mA / 655\~3276 (12bit)
-- Address 00 : CH1
-- Address 01 : CH2
-- Example: Read CH1 (0x78A = 1930)
+- Address 00 : IN0
+- Address 01 : IN1
+- Example: Read IN0 (0x78A = 1930)
 <pre>
   Send: 5A 03 00 00 00 01 [CRC] 
   Receive: 5A 03 02 07 8A [CRC] 

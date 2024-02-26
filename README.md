@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: Feb. 08, 2024</p>
+<p style="text-align: right;">Last Updated: Feb. 26, 2024</p>
 
 ### Table of Contents
 
@@ -12,6 +12,7 @@
 - [MBControl Wind Speed Sensor MBMet-100B-B](#mbcontrol-wind-speed-sensor-mbmet-100b-b)
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
+- [MRT Default](#mrt-default)
 - [Renke Default](#renke-default)
 - [Renke Pyranometer RS-TBQ-N01-AL](#renke-pyranometer-rs-tbq-n01-al)
 - [Renke Wind Direction](#renke-wind-direction)
@@ -130,6 +131,18 @@ Wind Speed measurement.
 3.50mm pitch 5P
 
 ![Local Image](images/ga_tb.png)
+
+---
+
+# MRT Default
+
+### Wire
+<pre>
+	Red             Vcc
+	Black           GND
+	Green(Yellow)	A+
+	White           B-
+</pre>
 
 ---
 

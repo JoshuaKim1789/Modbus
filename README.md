@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: Feb. 26, 2024</p>
+<p style="text-align: right;">Last Updated: June. 17, 2024</p>
 
 ### Table of Contents
 
@@ -28,8 +28,10 @@
  - [01 ~ 30 (0x01 ~ 0x1E)] PV Inverter
  - [31 ~ 60 (0x1F ~ 0x3C] PV Temperature
  - [61 (0x3D)] GHI : Renke Pyranometer RS-TBQ-N01-AL
- - [62 (0x3E)] GHI : EKO Pyranometer MS-80SH 
+ - [62 (0x3E)] GHI : EKO Pyranometer MS-80SH
+ - [63 (0x3F)] GHI : INFWIN PYR20-AAC002 
  - [71 ~ 80 (0x47 ~ 0x50)] POA
+ - [73 (0x49)] POA : INFWIN PYR20-AAC002
  - 
  - [90 ~ 100 (0x5A ~ 0x64)] Structure Sensor
  - 

@@ -136,6 +136,26 @@ Wind Speed measurement.
 
 ---
 
+# INFWIN PYR20-AAC002
+
+### DC Power: 12V (3.9 ~ 30V dc)
+
+### Wire
+<pre>
+	Red	Vcc
+	Black	GND
+	Yellow	A+
+	White   B-
+</pre>
+
+### Modbus-RTU
+<pre>
+  Default parameter 9600bps, 1S, NP, 8bits 
+  Default address 0x01
+</pre>
+
+---
+
 # MRT Default
 
 ### Wire

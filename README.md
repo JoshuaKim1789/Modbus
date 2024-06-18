@@ -211,7 +211,7 @@ Wind Speed measurement.
 #### Modbus ID
 - Address: 0x0200
 - Function: 3 / **6** / 16
-- Example: ID = 0x3F (GHI), 0x49 (POA)
+- Example: ID = **0x3F**(63) (GHI), **0x49**(73) (POA)
 <pre>
   Send: 01 06 0200 003F [CRC]
   Receive: 01 06 02 00 00 3F [CRC] 

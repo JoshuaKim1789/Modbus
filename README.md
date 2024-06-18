@@ -136,6 +136,60 @@ Wind Speed measurement.
 
 ---
 
+# CWT(ComWinTop) Temperature Sensors
+
+**CWT-TH04S-M** (Ambient Temperatrure) / 
+**CWT-T02S** (PV-module Temperature)
+
+### DC Power: 12V (5 ~ 30V dc)
+
+### Wire
+<pre>
+	Brown	Vcc
+	Black	GND
+	Yellow	A+
+	Blue	B-
+</pre>
+
+### Modbus-RTU
+<pre>
+  Default parameter 4800bps, 1S, NP, 8bits 
+  Default address 0x01
+</pre>
+
+#### Baud Rate 
+- Address: 0x07D1
+- Function: 6 / 3
+- Content:
+<pre><code> baud rate: 
+	    0 – 2400bps
+	    1 – 4800bps (*)
+	    2 – 9600 bps
+</code></pre>
+
+#### Modbus ID
+- Address: 0x07D0
+- Function: 3 / **6** 
+- Example: ID = **0x1F**(31)(Tpv), **0xCA**(202)(Ta)
+
+*Use **CWT-THXXS Config Tool** for baud and ID*
+
+# CWT Temperature measurement
+
+- Address 1 (0x0001) : [S16] 10x Temperature
+- Example: PV Temperature = 28.0°C (0x118 = 280)
+<pre>
+  Send: 1F 03 0001 0001 [CRC] 
+  Receive: 1F 03 02 01 18 [CRC]
+</pre>
+- Example: Ambient Temperature = 27.5 (0x0113 = 275)
+<pre>
+  Send: CA 03 0001 0001 [CRC] 
+  Receive: CA 03 02 01 13 [CRC]
+</pre> 
+
+---
+
 # INFWIN PYR20-AAC002
 
 ### DC Power: 12V (3.9 ~ 30V dc)
@@ -163,6 +217,15 @@ Wind Speed measurement.
   Receive: 01 06 02 00 00 3F [CRC] 
 </pre>
 *Take effect once re-power on*
+
+#### GHI measurement.
+
+- Address 0 : [U16] Solar radiation intensity (W/m²)
+- Example: 16 W/m² (0x0010 = 16)
+<pre>
+  Send: 3F 03 0000 0001 [CRC]
+  Receive: 3F 03 02 00 10 [CRC]
+</pre>
 
 ---
 

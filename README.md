@@ -174,7 +174,7 @@ Wind Speed measurement.
 
 *Use **CWT-THXXS Config Tool** for baud and ID*
 
-# CWT Temperature measurement
+### CWT Temperature measurement
 
 - Address 1 (0x0001) : [S16] 10x Temperature
 - Example: PV Temperature = 28.0°C (0x118 = 280)

@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: June. 17, 2024</p>
+<p style="text-align: right;">Last Updated: June. 18, 2024</p>
 
 ### Table of Contents
 
@@ -153,6 +153,16 @@ Wind Speed measurement.
   Default parameter 9600bps, 1S, NP, 8bits 
   Default address 0x01
 </pre>
+
+#### Modbus ID
+- Address: 0x0200
+- Function: 3 / **6** / 16
+- Example: ID = 0x3F (GHI), 0x49 (POA)
+<pre>
+  Send: 01 06 0200 003F [CRC]
+  Receive: 01 06 02 00 00 3F [CRC] 
+</pre>
+*Take effect once re-power on*
 
 ---
 

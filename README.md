@@ -137,7 +137,7 @@ Wind Speed measurement.
 
 ---
 
-# CWT(ComWinTop) Temperature Sensors
+# CWT Temperature Sensors
 
 **CWT-TH04S-M** (Ambient Temperatrure) / 
 **CWT-T02S** (PV-module Temperature)

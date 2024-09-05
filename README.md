@@ -13,6 +13,7 @@
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
 - [CWT Temperature Sensors](#cwt-temperature-sensors)
+- [INFWIN PYR20-AAC002](#infwin-pyr20-aac002)
 - [MRT Default](#mrt-default)
 - [Renke Default](#renke-default)
 - [Renke Pyranometer RS-TBQ-N01-AL](#renke-pyranometer-rs-tbq-n01-al)

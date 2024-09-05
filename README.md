@@ -1,6 +1,6 @@
 # Modbus Setup
 
-<p style="text-align: right;">Last Updated: June. 18, 2024</p>
+<p style="text-align: right;">Last Updated: Sep. 5, 2024</p>
 
 ### Table of Contents
 
@@ -12,6 +12,7 @@
 - [MBControl Wind Speed Sensor MBMet-100B-B](#mbcontrol-wind-speed-sensor-mbmet-100b-b)
 - [PUSR Default](#pusr-default)
 - [GA Default](#ga-default)
+- [CWT(ComWinTop) Temperature Sensors](#cwt(comwintop)-temperature-sensors)
 - [MRT Default](#mrt-default)
 - [Renke Default](#renke-default)
 - [Renke Pyranometer RS-TBQ-N01-AL](#renke-pyranometer-rs-tbq-n01-al)
